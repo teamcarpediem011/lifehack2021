@@ -1,0 +1,264 @@
+WindowManager:
+    LandingPage:
+    homepage
+    qn1:
+    qn2:
+    qn3:
+    qn4:
+    qn5:
+    lastpage:
+
+<LandingPage>
+    name: "landing"
+
+    Image:
+        source:"logo.png"
+        size_hint: 0.3, 0.5
+        pos_hint: {"x":0.35, "y":0.39}
+
+    FloatLayout:
+        cols: 1
+        Label:
+            text: "What's your name?"
+            font_size: 20
+            pos_hint: {"x":0, "y":-0.12}
+
+        TextInput:
+            multiline: False
+            id: username
+            size_hint: 0.3, 0.05
+            pos_hint: {"x":0.36, "y":0.3}
+
+    Button:
+        text:"Find a\nbuddy!"
+        size_hint: 0.2, 0.1
+        pos_hint: {"x":0.42, "y":0.15}
+        font_size: 20
+        on_release:
+            root.manager.transition.direction = "left"
+            root.login()
+<homepage>
+    name:"home"
+    
+    Image:
+        source: "usertag.png"
+        size_hint: 0.8, 0.8
+        pos_hint: {"x":-0.06, "y":0}
+    
+    Image:
+        source: "usertag.png"
+        size_hint: 0.8, 0.8
+        pos_hint: {"x":0.35, "y":0}
+
+    FloatLayout:
+        cols:1
+        Label:
+            text:"FOUND A \n MEAL BUDDY!"
+            bold:"True"
+            font_size:50
+            pos_hint: {"x":0, "y":0.37}
+            halign:"center"
+
+        Label:
+            text:"John"
+            color: (0, 0, 0, 1)
+            bold:"True"
+            font_size:50
+            pos_hint: {"x":-0.19, "y":-0.12}
+            halign:"center"
+
+        Label:
+            text:"Elijah"
+            color: (0, 0, 0, 1)
+            bold:"True"
+            font_size:50
+            pos_hint: {"x":0.22, "y":-0.12}
+            halign:"center"
+
+    Button:
+        text:">"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.91, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current ="qn1"
+            root.manager.transition.direction = "left"
+
+
+<qn1>
+    name:"qn1"
+
+    FloatLayout:
+        cols:1
+        Label:
+            text:"Q1"
+            bold:True
+            font_size:100
+            pos_hint: {"x":-0.4, "y":0.4}
+
+    Image:
+        source: "what food are you having now.png"
+        size_hint: 1.05, 1.1
+        pos_hint: {"x":0.02, "y":-0.2}
+    
+    Button:
+        text:">"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.91, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current ="qn2"
+            root.manager.transition.direction = "left"
+    
+    Button:
+        text:"<"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.01, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current="home"
+            root.manager.transition.direction = "right"
+
+<qn2>
+    name:"qn2"
+
+    FloatLayout:
+        cols:1
+        Label:
+            text:"Q2"
+            bold:True
+            font_size:100
+            pos_hint: {"x":-0.4, "y":0.4}
+
+    Image:
+        source: "superhero.png"
+        size_hint: 1.05, 1.1
+        pos_hint: {"x":0.02, "y":-0.2}
+    
+    Button:
+        text:">"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.91, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current="qn3"
+            root.manager.transition.direction = "left"
+    
+    Button:
+        text:"<"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.01, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current="qn1"
+            root.manager.transition.direction = "right"
+
+<qn3>
+    name:"qn3"
+
+    FloatLayout:
+        cols:1
+        Label:
+            text:"Q3"
+            bold:True
+            font_size:100
+            pos_hint: {"x":-0.4, "y":0.4}
+
+    Image:
+        source: "most embarassing thing.png"
+        size_hint: 1.05, 1.1
+        pos_hint: {"x":0.02, "y":-0.2}
+    
+    Button:
+        text:">"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.91, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current="qn4"
+            root.manager.transition.direction = "left"
+    
+    Button:
+        text:"<"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.01, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current="qn2"
+            root.manager.transition.direction = "right"
+
+<qn4>
+    name:"qn4"
+
+    FloatLayout:
+        cols:1
+        Label:
+            text:"Q4"
+            bold:True
+            font_size:100
+            pos_hint: {"x":-0.4, "y":0.4}
+
+    Image:
+        source: "tomato.png"
+        size_hint: 1.05, 1.1
+        pos_hint: {"x":0.02, "y":-0.2}
+    
+    Button:
+        text:">"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.91, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current="qn5"
+            root.manager.transition.direction = "left"
+    
+    Button:
+        text:"<"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.01, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current="qn3"
+            root.manager.transition.direction = "right"
+
+<qn5>
+    name:"qn5"
+
+    FloatLayout:
+        cols:1
+        Label:
+            text:"Q5"
+            bold:True
+            font_size:100
+            pos_hint: {"x":-0.4, "y":0.4}
+
+    Image:
+        source: "work from home.png"
+        size_hint: 1.05, 1.1
+        pos_hint: {"x":0.02, "y":-0.2}
+    
+    Button:
+        text:">"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.91, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current = "lastpage"
+            root.manager.transition.direction = "left"
+    
+    Button:
+        text:"<"
+        size_hint: 0.08, 0.2
+        pos_hint: {"x":0.01, "y":0.37}
+        font_size: 80
+        on_release:
+            app.root.current="qn4"
+            root.manager.transition.direction = "right"
+
+<lastpage>
+    name:"lastpage"
+
+    Image:
+        source: "lastpage.png"
+        size_hint: 1.05, 1.1
+        pos_hint: {"x":0, "y":0}
